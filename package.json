@@ -1,0 +1,37 @@
+{
+  "name": "github-pages-browser-router",
+  "version": "0.0.0",
+  "private": false,
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2"
+  },
+  "homepage": "http://promisetochi.github.io/github-pages-browser-router",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "dev": "vite dev",
+    "test": "node scripts/test.js",
+    "deploy": "gh-pages -d build",
+    "version": "yarn prepare-release &&  git add .",
+    "release": "rm -rf node_modules build && yarn i && yarn run build && yarn run deploy",
+    "cleanup": "rm -rf node_modules && yarn i && yarn start",
+    "prepareCoreServices": "cd node_modules/flex-core-services && cross-env appType='web' yarn run preparePackage",
+    "prepare-release": "bash ./scripts/prep-release.sh",
+    "postinstall": "yarn run prepareCoreServices && yarn prepare-release"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^6.2.0",
+    "gh-pages": "^3.1.0",
+    "package-lock-only": "0.0.4",
+    "vite": "^5.1.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-svgr": "^4.2.0"
+  }
+}
