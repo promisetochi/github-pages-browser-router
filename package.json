@@ -14,7 +14,7 @@
     "serve": "vite preview",
     "dev": "vite dev",
     "test": "node scripts/test.js",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "version": "yarn prepare-release &&  git add .",
     "release": "rm -rf node_modules build && yarn i && yarn run build && yarn run deploy",
     "cleanup": "rm -rf node_modules && yarn i && yarn start",
