@@ -25,8 +25,9 @@ const R = () => {
   )
 }
 
+console.log({ env: process.env, viteMeta: import.meta })
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
     <R />
   </BrowserRouter>,
   document.getElementById("root")
