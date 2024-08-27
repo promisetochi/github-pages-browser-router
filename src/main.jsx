@@ -13,12 +13,14 @@ import {
 // import { CompatRoute } from "react-router-dom-v5-compat"
 
 const Hello = () => <>Hello</>
+const Home = () => <>Home</>
 
 const R = () => {
   return (
     <Switch>
       <Route path="/app" component={App} />
       <Route path="/hello" component={Hello} />
+      <Route path="/" component={Home} />
     </Switch>
   )
 }
